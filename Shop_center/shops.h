@@ -35,7 +35,7 @@ void People::print()
 
 struct Shops {
     void listOfShops();
-    void groseryShops();
+    void groseryShops(People& people);
 };
 
 void Shops::listOfShops()
@@ -59,9 +59,8 @@ void Shops::listOfShops()
               << std::endl;
 }
 
-void Shops::groseryShops()
+void Shops::groseryShops(People& people)
 {
-    People p;
     std::cout << "Billa(0) or Silpo(1), EXIT(2): ";
     char choise = 0;
     char choiseOfBuy = 0;
@@ -85,10 +84,10 @@ void Shops::groseryShops()
             int usingmoney = 0;
             std::cin >> potatoBuy;
             usingmoney = potatoBuy * 10;
-            p.change(usingmoney, potatoBuy, 0, 0);
+            people.change(usingmoney, potatoBuy, 0, 0);
             int result = *buypotato - potatoBuy;
             std::cout << "U buy: " << potatoBuy << "\nLeft in store: " << result << std::endl;
-            p.print();
+            people.print();
             potato -= potatoBuy;
         }
 
@@ -99,10 +98,10 @@ void Shops::groseryShops()
             int usingmoney = 0;
             std::cin >> tomatoBuy;
             usingmoney = tomatoBuy * 8;
-            p.change(usingmoney, tomatoBuy, 0, 0);
+            people.change(usingmoney, tomatoBuy, 0, 0);
             int result = *buytomato - tomatoBuy;
             std::cout << "U buy: " << tomatoBuy << "\nLeft in store: " << result << std::endl;
-            p.print();
+            people.print();
             tomato -= tomatoBuy;
         }
         else if (choiseOfBuy == '3') {
@@ -112,10 +111,10 @@ void Shops::groseryShops()
             int usingmoney = 0;
             std::cin >> onionBuy;
             usingmoney = onionBuy * 3;
-            p.change(usingmoney, onionBuy, 0, 0);
+            people.change(usingmoney, onionBuy, 0, 0);
             int result = *buyonion - onionBuy;
             std::cout << "U buy: " << onionBuy << "\nLeft in store: " << result << std::endl;
-            p.print();
+            people.print();
             onion -= onionBuy;
         }
         else {
@@ -140,10 +139,10 @@ void Shops::groseryShops()
             int usingmoney;
             std::cin >> nutsBuy;
             usingmoney = nutsBuy * 1;
-            p.change(usingmoney, nutsBuy, 0, 0);
+            people.change(usingmoney, nutsBuy, 0, 0);
             int result = *buynut - nutsBuy;
             std::cout << "U buy: " << nutsBuy << "\nleft in store: " << result << std::endl;
-            p.print();
+            people.print();
             nuts -= nutsBuy;
         }
         else if (choiseOfBuy == '2') {
@@ -153,10 +152,10 @@ void Shops::groseryShops()
             int usingmoney;
             std::cin >> chipsBuy;
             usingmoney = chipsBuy * 20;
-            p.change(usingmoney, chipsBuy, 0, 0);
+            people.change(usingmoney, chipsBuy, 0, 0);
             int result = *buychips - chipsBuy;
             std::cout << "U buy: " << chipsBuy << "\nleft in store: " << result << std::endl;
-            p.print();
+            people.print();
             chips -= chipsBuy;
         }
         else if (choiseOfBuy == '3') {
@@ -166,10 +165,10 @@ void Shops::groseryShops()
             int usingmoney;
             std::cin >> cocaColaBuy;
             usingmoney = cocaColaBuy * 12;
-            p.change(usingmoney, cocaColaBuy, 0, 0);
+            people.change(usingmoney, cocaColaBuy, 0, 0);
             int result = *buycocaCola - cocaColaBuy;
             std::cout << "U buy: " << cocaColaBuy << "\nleft in store: " << result << std::endl;
-            p.print();
+            people.print();
             cocaCola -= cocaColaBuy;
         }
         else {
@@ -181,7 +180,7 @@ void Shops::groseryShops()
     }
     else {
         std::cout << "\nWrong choise" << std::endl;
-        groseryShops();
+        groseryShops(people);
     }
 }
 
