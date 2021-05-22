@@ -30,6 +30,7 @@ void People::change(int m, int f, int c, int a)
         food += f;
         cloth += c;
         amusent += a;
+        std::cout << "\nDone!" << std::endl;
     }
 }
 
