@@ -8,6 +8,8 @@ private:
     float secondNum = 0;
 
 public:
+    Calculator();
+
     void num();
     void choise();
     void concatenete();
@@ -16,39 +18,72 @@ public:
     void division();
 };
 
-void Calculator::num()
+Calculator::Calculator()
 {
     cout << "\nEnter first number: ";
     cin >> firstNum;
+
     cout << "\nEnter second number: ";
     cin >> secondNum;
 }
 
+void Calculator::concatenete()
+{
+    float sum;
+
+    sum = firstNum + secondNum;
+    cout << "\nAnswer: " << sum;
+}
+
+void Calculator::subtraction()
+{
+    float sub;
+
+    sub = firstNum - secondNum;
+    cout << "\nAnswer: " << sub;
+}
+
+void Calculator::multiplication()
+{
+    float multi;
+
+    multi = firstNum * secondNum;
+    cout << "\nAnswer: " << multi;
+}
+
+void Calculator::division()
+{
+    float div;
+
+    div = firstNum / secondNum;
+    cout << "\nAnswer: " << div;
+}
+
 void choise()
 {
-    Calculator c;
     bool stop = false;
+
     while (stop != true)
     {
+        Calculator c;
+
         cout << "\nWhat u want:\n1. Concatenete\n2. Subtraction\n3. Multiplication\n4. Division\n5. Stop it\n";
+
         int choise;
         cin >> choise;
+
         switch (choise)
         {
         case 1:
-            c.num();
             c.concatenete();
             break;
         case 2:
-            c.num();
             c.subtraction();
             break;
         case 3:
-            c.num();
             c.multiplication();
             break;
         case 4:
-            c.num();
             c.division();
             break;
         case 5:
@@ -57,35 +92,6 @@ void choise()
         }
     }
 }
-
-void Calculator::concatenete()
-{
-    float sum;
-    sum = firstNum + secondNum;
-    cout << "\nAnswer: " << sum;
-}
-
-void Calculator::subtraction()
-{
-    float sub;
-    sub = firstNum - secondNum;
-    cout << "\nAnswer: " << sub;
-}
-
-void Calculator::multiplication()
-{
-    float multi;
-    multi = firstNum * secondNum;
-    cout << "\nAnswer: " << multi;
-}
-
-void Calculator::division()
-{
-    float div;
-    div = firstNum / secondNum;
-    cout << "\nAnswer: " << div;
-}
-
 int main()
 {
     choise();
