@@ -55,7 +55,7 @@ struct FoodClothAmusent
 void FoodClothAmusent::foodprint()
 {
     std::cout << "\tFood" << std::endl;
-    f or (int i = 0; i < 3; i++)
+    for (int i = 0; i < 3; i++)
     {
         std::cout << foodlist[i] << "\tPrice: " << priceOfFood[i] << std::endl;
     }
